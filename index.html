@@ -678,21 +678,45 @@ function processRawData(data) {
 function loadIdeas() {
   // Gunakan JSONP untuk menghindari CORS block dari GitHub Pages
   const callbackName = 'jsonpCb_' + Date.now();
+  let loaded = false;
+
   window[callbackName] = function(data) {
+    loaded = true;
     processRawData(data);
     delete window[callbackName];
-    script.remove();
+    if (script.parentNode) script.remove();
   };
 
   const script = document.createElement('script');
   script.src = SCRIPT_URL + '?callback=' + callbackName;
+
+  // onerror sering false-positive karena ada redirect (302) di Apps Script,
+  // jadi kita tunda penanganan error dan cek apakah callback sudah jalan
   script.onerror = function() {
-    console.error('Gagal load dari Sheets: JSONP request error');
-    ideas = [];
-    try { applyBankFilters(); } catch(e) {}
-    try { drawStats(); } catch(e) {}
-    delete window[callbackName];
+    setTimeout(function() {
+      if (!loaded) {
+        console.error('Gagal load dari Sheets: JSONP request error (timeout)');
+        ideas = [];
+        try { applyBankFilters(); } catch(e) {}
+        try { drawStats(); } catch(e) {}
+        delete window[callbackName];
+        if (script.parentNode) script.remove();
+      }
+    }, 1500);
   };
+
+  // Fallback: jika dalam 6 detik callback belum jalan sama sekali, anggap gagal
+  setTimeout(function() {
+    if (!loaded && window[callbackName]) {
+      console.error('Gagal load dari Sheets: JSONP timeout 6s');
+      ideas = [];
+      try { applyBankFilters(); } catch(e) {}
+      try { drawStats(); } catch(e) {}
+      delete window[callbackName];
+      if (script.parentNode) script.remove();
+    }
+  }, 6000);
+
   document.body.appendChild(script);
 }
 
