@@ -90,6 +90,102 @@ textarea.fi{min-height:90px;resize:vertical}
 .slbl{font-size:10px;color:#6B3FA0;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;font-family:'Poppins',sans-serif}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(8px);background:#1A2B5F;color:#fff;padding:10px 20px;border-radius:8px;font-size:12.5px;font-family:'Poppins',sans-serif;font-weight:600;opacity:0;transition:all 0.28s;pointer-events:none;z-index:999;white-space:nowrap;box-shadow:0 4px 18px rgba(26,43,95,0.22)}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.search-row{display:flex;gap:8px;margin-bottom:10px}
+.search-box{flex:1;display:flex;align-items:center;gap:7px;border:1.5px solid #DDE3F0;border-radius:8px;padding:8px 11px;background:#fff}
+.search-box i{color:#9AA3BB;font-size:15px}
+.search-box input{border:none;outline:none;font-size:13px;font-family:'Inter',sans-serif;color:#1A2B5F;width:100%;background:transparent}
+.sort-btn{width:38px;border:1.5px solid #DDE3F0;border-radius:8px;background:#fff;color:#6B3FA0;cursor:pointer;font-size:16px;transition:all 0.15s}
+.sort-btn:hover{border-color:#6B3FA0;background:#F5F0FC}
+.sort-btn.active{background:#6B3FA0;color:#fff;border-color:#6B3FA0}
+.filter-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px}
+.fi-sm{padding:7px 6px;font-size:11px;border-radius:7px}
+.result-count{font-size:11px;color:#9AA3BB;margin-bottom:8px;font-weight:500}
+.section-title{display:flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:700;color:#1A2B5F}
+.section-title i{font-size:16px;color:#6B3FA0}
+.section-sub{font-size:11px;color:#9AA3BB;margin-top:2px;margin-bottom:10px;line-height:1.4}
+.matrix-wrap{position:relative;padding-left:18px;padding-bottom:18px}
+.matrix-ylabel{position:absolute;left:-4px;top:50%;transform:translateY(-50%) rotate(-90deg);font-size:9.5px;font-weight:700;color:#9AA3BB;text-transform:uppercase;letter-spacing:0.4px;white-space:nowrap}
+.matrix-xlabel{text-align:center;font-size:9.5px;font-weight:700;color:#9AA3BB;text-transform:uppercase;letter-spacing:0.4px;margin-top:6px}
+.matrix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:5px;direction:rtl}
+.mcell{direction:ltr;background:#F4F6FB;border:1.5px solid #E5E9F4;border-radius:8px;padding:10px 6px;text-align:center;position:relative;min-height:62px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mcell-n{font-size:18px;font-weight:700;color:#1A2B5F;font-family:'Poppins',sans-serif}
+.mcell-l{font-size:8.5px;color:#9AA3BB;font-weight:600;text-transform:uppercase;letter-spacing:0.2px;margin-top:2px;line-height:1.2}
+.mcell-win{background:#F0E8FF;border-color:#6B3FA0}
+.mcell-win .mcell-n{color:#6B3FA0}
+.mcell-win .mcell-l{color:#8B5FC0}
+.mcell-win i{position:absolute;top:5px;right:5px;font-size:11px;color:#F0A020}
+.quickwin-banner{margin-top:12px;background:#F5F0FC;border-left:3px solid #6B3FA0;border-radius:0 8px 8px 0;padding:9px 12px;font-size:11.5px;color:#4A2B80;line-height:1.5}
+.quickwin-banner strong{font-weight:700}
+.trend-chart{display:flex;align-items:flex-end;gap:5px;height:90px;padding:8px 0;border-bottom:1.5px solid #E8EDF8}
+.trend-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+.trend-bar{width:100%;max-width:28px;background:linear-gradient(180deg,#6B3FA0,#1A2B5F);border-radius:4px 4px 0 0;min-height:3px;transition:height 0.4s}
+.trend-n{font-size:10px;font-weight:700;color:#1A2B5F}
+.trend-lbl{font-size:9px;color:#9AA3BB;margin-top:5px;font-weight:600}
+.kat-bar-row{margin-bottom:10px}
+.kat-bar-top{display:flex;justify-content:space-between;margin-bottom:3px}
+.kat-bar-name{font-size:12px;font-weight:600;color:#1A2B5F;font-family:'Poppins',sans-serif}
+.kat-bar-val{font-size:12px;color:#6B3FA0;font-weight:700}
+.kat-bar-track{background:#EEF1FA;border-radius:20px;height:7px;overflow:hidden}
+.kat-bar-fill{height:100%;border-radius:20px;transition:width 0.5s}
+.subco-card{background:#F9FAFD;border:1.5px solid #E8EDF8;border-radius:10px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.subco-card-left{display:flex;align-items:center;gap:9px}
+.subco-icon{width:32px;height:32px;border-radius:8px;background:#1A2B5F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'Poppins',sans-serif}
+.subco-name{font-size:12.5px;font-weight:700;color:#1A2B5F;font-family:'Poppins',sans-serif}
+.subco-detail{font-size:10.5px;color:#9AA3BB;margin-top:1px}
+.subco-count{font-size:16px;font-weight:700;color:#6B3FA0;font-family:'Poppins',sans-serif}
+.dept-row{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid #F0F2F8}
+.dept-row:last-child{border-bottom:none}
+.dept-rank{width:20px;height:20px;border-radius:50%;background:#EEF1FA;color:#1A2B5F;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Poppins',sans-serif}
+.dept-rank.r1{background:#F0A020;color:#fff}
+.dept-name{flex:1;font-size:12px;color:#1A2B5F;font-weight:600}
+.dept-n{font-size:12px;color:#6B3FA0;font-weight:700}
+.lb-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #F0F2F8}
+.lb-row:last-child{border-bottom:none}
+.lb-rank{width:24px;height:24px;border-radius:50%;background:#EEF1FA;color:#1A2B5F;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Poppins',sans-serif}
+.lb-rank.gold{background:#F0A020;color:#fff}
+.lb-rank.silver{background:#B0BDD8;color:#fff}
+.lb-rank.bronze{background:#C9956A;color:#fff}
+.lb-info{flex:1}
+.lb-name{font-size:12.5px;font-weight:700;color:#1A2B5F;font-family:'Poppins',sans-serif}
+.lb-dept{font-size:10.5px;color:#9AA3BB}
+.lb-count{font-size:14px;font-weight:700;color:#6B3FA0;font-family:'Poppins',sans-serif}
+.empty-small{text-align:center;padding:1.2rem;color:#B0BDD8;font-size:12px}
+
+.progress-wrap{margin-bottom:1.3rem}
+.progress-track{background:#EEF1FA;border-radius:20px;height:6px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#1A2B5F,#6B3FA0);border-radius:20px;transition:width 0.35s ease}
+.progress-label{display:flex;justify-content:space-between;margin-top:5px;font-size:10.5px;color:#9AA3BB;font-weight:600}
+#progress-pct{color:#6B3FA0;font-weight:700}
+.field-check{font-size:14px;color:#1A8A4A;opacity:0;transition:opacity 0.2s}
+.field-check.show{opacity:1}
+.char-counter{font-size:10px;color:#B0BDD8;text-align:right;margin-top:4px;font-weight:500}
+.char-counter.ok{color:#1A8A4A}
+.btn-row{display:flex;gap:8px;margin-top:4px}
+.rbtn{width:46px;flex-shrink:0;background:#fff;border:1.5px solid #DDE3F0;border-radius:9px;color:#9AA3BB;cursor:pointer;font-size:16px;transition:all 0.15s}
+.rbtn:hover{border-color:#E24B4A;color:#E24B4A;background:#FDF2F2}
+.btn-row .sbtn{flex:1;margin-top:0}
+.success-overlay{position:fixed;inset:0;background:rgba(26,43,95,0.55);display:none;align-items:center;justify-content:center;z-index:1000;padding:1.5rem;backdrop-filter:blur(2px)}
+.success-overlay.show{display:flex;animation:fadeIn 0.25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.success-card{background:#fff;border-radius:18px;padding:2rem 1.6rem;text-align:center;max-width:340px;width:100%;box-shadow:0 20px 60px rgba(26,43,95,0.3);animation:popIn 0.35s cubic-bezier(0.34,1.56,0.64,1)}
+@keyframes popIn{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
+.success-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1A8A4A,#2DB86A);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;animation:checkPop 0.45s ease 0.1s both}
+@keyframes checkPop{0%{transform:scale(0)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+.success-icon i{font-size:32px;color:#fff}
+.success-title{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:#1A2B5F;margin-bottom:6px}
+.success-sub{font-size:12.5px;color:#9AA3BB;line-height:1.5;margin-bottom:20px}
+.success-btn{background:#1A2B5F;color:#fff;border:none;border-radius:9px;padding:11px 24px;font-size:13px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer;transition:background 0.15s}
+.success-btn:hover{background:#6B3FA0}
+.confirm-overlay{position:fixed;inset:0;background:rgba(26,43,95,0.45);display:none;align-items:center;justify-content:center;z-index:1000;padding:1.5rem}
+.confirm-overlay.show{display:flex;animation:fadeIn 0.2s ease}
+.confirm-card{background:#fff;border-radius:16px;padding:1.6rem;text-align:center;max-width:300px;width:100%;box-shadow:0 20px 50px rgba(26,43,95,0.25)}
+.confirm-card i{font-size:30px;color:#E24B4A;margin-bottom:10px;display:block}
+.confirm-card p{font-size:13px;color:#1A2B5F;font-weight:600;margin-bottom:16px}
+.confirm-btns{display:flex;gap:8px}
+.confirm-btns button{flex:1;padding:9px;border-radius:8px;font-size:12.5px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer;border:1.5px solid #DDE3F0}
+.confirm-cancel{background:#fff;color:#9AA3BB}
+.confirm-ok{background:#E24B4A;color:#fff;border-color:#E24B4A}
 </style>
 </head>
 <body>
@@ -109,8 +205,24 @@ textarea.fi{min-height:90px;resize:vertical}
   </div>
 
   <div id="pane-form" class="pane on">
-    <div class="fg"><label class="fl">1. Nama Karyawan</label><input type="text" class="fi" id="f-nama" placeholder="Nama lengkap..."></div>
-    <div class="fg"><label class="fl">2. ID Karyawan</label><input type="text" class="fi" id="f-id" placeholder="ID karyawan..."></div>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="progress-label"><span id="progress-text">Langkah 0 dari 7 terisi</span><span id="progress-pct">0%</span></div>
+    </div>
+    <div class="fg">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <label class="fl" style="margin-bottom:0">1. Nama Karyawan</label>
+        <span class="field-check" id="chk-nama"></span>
+      </div>
+      <input type="text" class="fi" id="f-nama" placeholder="Nama lengkap..." oninput="onFieldInput()">
+    </div>
+    <div class="fg">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <label class="fl" style="margin-bottom:0">2. ID Karyawan</label>
+        <span class="field-check" id="chk-id"></span>
+      </div>
+      <input type="text" class="fi" id="f-id" placeholder="ID karyawan..." oninput="onFieldInput()">
+    </div>
     <div class="fg">
       <label class="fl">3. Sub-Co</label>
       <div class="sc-grid">
@@ -121,8 +233,48 @@ textarea.fi{min-height:90px;resize:vertical}
         <div class="sc" onclick="pickSc(this,'DAWI')">DAWI</div>
       </div>
     </div>
-    <div class="fg"><label class="fl">4. Departemen</label><input type="text" class="fi" id="f-dept" placeholder="Nama departemen..."></div>
-    <div class="fg"><label class="fl">5. Ide Perbaikan</label><textarea class="fi" id="f-ide" placeholder="Jelaskan ide perbaikanmu..."></textarea></div>
+    <div class="fg">
+      <label class="fl">4. Departemen</label>
+      <input type="text" class="fi" id="f-dept" placeholder="Nama departemen...">
+      <select class="fi" id="f-dept-select" style="display:none;margin-top:0;cursor:pointer">
+        <option value="">— Pilih Departemen —</option>
+        <option value="Corporate SCM & CE">Corporate SCM & CE</option>
+        <option value="Motorcycle Sales, Marketing & Logistic">Motorcycle Sales, Marketing & Logistic</option>
+        <option value="Technical Service">Technical Service</option>
+        <option value="Parts Sales, Marketing & Logistic">Parts Sales, Marketing & Logistic</option>
+        <option value="FAT & Purchasing">FAT & Purchasing</option>
+        <option value="Corporate IT">Corporate IT</option>
+        <option value="General Support">General Support</option>
+        <option value="Honda Customer Care Centre">Honda Customer Care Centre</option>
+        <option value="Corporate HC">Corporate HC</option>
+        <option value="Corporate Audit">Corporate Audit</option>
+        <option value="Corporate Management Development">Corporate Management Development</option>
+        <option value="Management Office">Management Office</option>
+        <option value="Corporate Legal">Corporate Legal</option>
+        <option value="Corporate Tax">Corporate Tax</option>
+        <option value="Corporate Finance ACC">Corporate Finance ACC</option>
+        <option value="Corporate Secretary">Corporate Secretary</option>
+        <option value="Corporate Building & Infrastructure">Corporate Building & Infrastructure</option>
+      </select>
+      <select class="fi" id="f-dept-select-ny" style="display:none;margin-top:0;cursor:pointer">
+        <option value="">— Pilih Departemen —</option>
+        <option value="Plantation (Cigentur)">Plantation (Cigentur)</option>
+        <option value="Pertanian & Hortikultura">Pertanian & Hortikultura</option>
+        <option value="R&D">R&D</option>
+        <option value="Bangunan & Infrastruktur">Bangunan & Infrastruktur</option>
+        <option value="FAT & IT">FAT & IT</option>
+        <option value="Mdev">Mdev</option>
+        <option value="HRGA">HRGA</option>
+      </select>
+    </div>
+    <div class="fg"><div class="fg">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <label class="fl" style="margin-bottom:0">5. Ide Perbaikan</label>
+        <span class="field-check" id="chk-ide"></span>
+      </div>
+      <textarea class="fi" id="f-ide" placeholder="Jelaskan ide perbaikanmu secara detail... (minimal 20 karakter)" oninput="onFieldInput()"></textarea>
+      <div class="char-counter" id="char-counter">0 karakter</div>
+    </div>
     <div class="fg">
       <label class="fl">6. Kategori</label>
       <div class="kat-grid">
@@ -148,17 +300,64 @@ textarea.fi{min-height:90px;resize:vertical}
         <div class="ic" id="k-mudah" onclick="pickKem('Mudah')"><div class="dot" style="background:#1A8A4A"></div><div class="lbl" style="color:#1A8A4A">Mudah</div></div>
       </div>
     </div>
-    <button class="sbtn" id="sbtn" onclick="kirimIde()">Kirim Ide &rarr;</button>
+    <div class="btn-row">
+      <button class="rbtn" id="rbtn" onclick="confirmReset()" title="Reset form"><i class="ti ti-eraser" aria-hidden="true"></i></button>
+      <button class="sbtn" id="sbtn" onclick="kirimIde()">Kirim Ide &rarr;</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS OVERLAY -->
+  <div class="success-overlay" id="success-overlay">
+    <div class="success-card">
+      <div class="success-icon"><i class="ti ti-check" aria-hidden="true"></i></div>
+      <div class="success-title">Ide Berhasil Dikirim!</div>
+      <div class="success-sub">Terima kasih sudah berkontribusi untuk continuous improvement</div>
+      <button class="success-btn" onclick="closeSuccess()">Tambah Ide Lagi</button>
+    </div>
   </div>
 
   <div id="pane-bank" class="pane">
-    <div class="chips">
-      <span class="chip all-c" onclick="filterBank('all',this)">Semua</span>
-      <span class="chip dig" onclick="filterBank('Digitalisasi',this)">Digitalisasi</span>
-      <span class="chip tools" onclick="filterBank('Tools / Fasilitas Kerja',this)">Tools</span>
-      <span class="chip pros" onclick="filterBank('Proses Kerja',this)">Proses Kerja</span>
-      <span class="chip lay" onclick="filterBank('Layout / Area Kerja',this)">Layout</span>
+    <div class="search-row">
+      <div class="search-box">
+        <i class="ti ti-search" aria-hidden="true"></i>
+        <input type="text" id="search-input" placeholder="Cari nama, ide, atau departemen..." oninput="applyBankFilters()">
+      </div>
+      <button class="sort-btn" id="sort-btn" onclick="toggleSort()"><i class="ti ti-arrows-sort" aria-hidden="true"></i></button>
     </div>
+
+    <div class="chips" id="kat-chips">
+      <span class="chip all-c" onclick="filterBank('kat','all',this)">Semua Kategori</span>
+      <span class="chip dig" onclick="filterBank('kat','Digitalisasi',this)">Digitalisasi</span>
+      <span class="chip tools" onclick="filterBank('kat','Tools / Fasilitas Kerja',this)">Tools</span>
+      <span class="chip pros" onclick="filterBank('kat','Proses Kerja',this)">Proses Kerja</span>
+      <span class="chip lay" onclick="filterBank('kat','Layout / Area Kerja',this)">Layout</span>
+    </div>
+
+    <div class="filter-row">
+      <select class="fi fi-sm" id="filter-subco" onchange="applyBankFilters()">
+        <option value="">Semua Sub-Co</option>
+        <option value="CORP">CORP</option>
+        <option value="PBL">PBL</option>
+        <option value="NY">NY</option>
+        <option value="DAS">DAS</option>
+        <option value="DAWI">DAWI</option>
+      </select>
+      <select class="fi fi-sm" id="filter-dampak" onchange="applyBankFilters()">
+        <option value="">Semua Dampak</option>
+        <option value="Tinggi">Dampak Tinggi</option>
+        <option value="Sedang">Dampak Sedang</option>
+        <option value="Rendah">Dampak Rendah</option>
+      </select>
+      <select class="fi fi-sm" id="filter-kemudahan" onchange="applyBankFilters()">
+        <option value="">Semua Kemudahan</option>
+        <option value="Mudah">Mudah</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Sulit">Sulit</option>
+      </select>
+    </div>
+
+    <div class="result-count" id="result-count"></div>
+
     <div class="cards" id="cards-list">
       <div class="empty"><i class="ti ti-bulb-off" aria-hidden="true"></i><p style="font-size:13px">Belum ada ide tersimpan.</p></div>
     </div>
@@ -168,13 +367,71 @@ textarea.fi{min-height:90px;resize:vertical}
     <div class="srow">
       <div class="sbox"><div class="snum" id="st-tot">0</div><div class="slbl">Total Ide</div></div>
       <div class="sbox"><div class="snum" id="st-hi">0</div><div class="slbl">Dampak Tinggi</div></div>
-      <div class="sbox"><div class="snum" id="st-easy">0</div><div class="slbl">Mudah Dikerjakan</div></div>
+      <div class="sbox"><div class="snum" id="st-easy">0</div><div class="slbl">Quick Win</div></div>
     </div>
-    <div id="stats-body" style="text-align:center;padding:1rem;color:#888;font-size:13px">
-      <i class="ti ti-chart-pie" style="font-size:30px;display:block;color:#D0D8EE;margin-bottom:8px" aria-hidden="true"></i>Belum ada data.
+
+    <div id="stats-empty" style="text-align:center;padding:1rem;color:#888;font-size:13px">
+      <i class="ti ti-chart-pie" style="font-size:30px;display:block;color:#D0D8EE;margin-bottom:8px" aria-hidden="true"></i>Belum ada data untuk dianalisis.
+    </div>
+
+    <div id="stats-content" style="display:none">
+
+      <!-- QUICK WIN MATRIX -->
+      <div class="section-title"><i class="ti ti-target-arrow" aria-hidden="true"></i>Quick Win Matrix</div>
+      <p class="section-sub">Dampak vs Kemudahan Pelaksanaan — prioritaskan ide di kuadran kanan atas</p>
+      <div class="matrix-wrap">
+        <div class="matrix-ylabel">Dampak →</div>
+        <div class="matrix-grid">
+          <div class="mcell" id="mx-tinggi-sulit"><span class="mcell-n">0</span><span class="mcell-l">Tinggi · Sulit</span></div>
+          <div class="mcell" id="mx-tinggi-sedang"><span class="mcell-n">0</span><span class="mcell-l">Tinggi · Sedang</span></div>
+          <div class="mcell mcell-win" id="mx-tinggi-mudah"><span class="mcell-n">0</span><span class="mcell-l">Tinggi · Mudah</span><i class="ti ti-star-filled" aria-hidden="true"></i></div>
+          <div class="mcell" id="mx-sedang-sulit"><span class="mcell-n">0</span><span class="mcell-l">Sedang · Sulit</span></div>
+          <div class="mcell" id="mx-sedang-sedang"><span class="mcell-n">0</span><span class="mcell-l">Sedang · Sedang</span></div>
+          <div class="mcell mcell-win" id="mx-sedang-mudah"><span class="mcell-n">0</span><span class="mcell-l">Sedang · Mudah</span></div>
+          <div class="mcell" id="mx-rendah-sulit"><span class="mcell-n">0</span><span class="mcell-l">Rendah · Sulit</span></div>
+          <div class="mcell" id="mx-rendah-sedang"><span class="mcell-n">0</span><span class="mcell-l">Rendah · Sedang</span></div>
+          <div class="mcell" id="mx-rendah-mudah"><span class="mcell-n">0</span><span class="mcell-l">Rendah · Mudah</span></div>
+        </div>
+        <div class="matrix-xlabel">Kemudahan Pelaksanaan →</div>
+      </div>
+      <div class="quickwin-banner" id="quickwin-banner"></div>
+
+      <!-- TREN WAKTU -->
+      <div class="section-title" style="margin-top:1.6rem"><i class="ti ti-trending-up" aria-hidden="true"></i>Tren Ide per Bulan</div>
+      <p class="section-sub">Momentum partisipasi continuous improvement</p>
+      <div id="trend-chart" class="trend-chart"></div>
+
+      <!-- KATEGORI BREAKDOWN -->
+      <div class="section-title" style="margin-top:1.6rem"><i class="ti ti-category" aria-hidden="true"></i>Distribusi Kategori</div>
+      <div id="kat-breakdown"></div>
+
+      <!-- SUB-CO & DEPARTEMEN -->
+      <div class="section-title" style="margin-top:1.6rem"><i class="ti ti-building" aria-hidden="true"></i>Performa per Sub-Co</div>
+      <p class="section-sub">Jumlah ide & rata-rata dampak per unit bisnis</p>
+      <div id="subco-breakdown"></div>
+
+      <div class="section-title" style="margin-top:1.6rem"><i class="ti ti-list-details" aria-hidden="true"></i>Top 5 Departemen Paling Aktif</div>
+      <div id="dept-breakdown"></div>
+
+      <!-- LEADERBOARD -->
+      <div class="section-title" style="margin-top:1.6rem"><i class="ti ti-trophy" aria-hidden="true"></i>Top Kontributor</div>
+      <p class="section-sub">Karyawan dengan ide perbaikan terbanyak</p>
+      <div id="leaderboard"></div>
+
     </div>
   </div>
 </div>
+<div class="confirm-overlay" id="confirm-overlay">
+  <div class="confirm-card">
+    <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+    <p>Yakin ingin mengosongkan semua isian form?</p>
+    <div class="confirm-btns">
+      <button class="confirm-cancel" onclick="closeConfirm()">Batal</button>
+      <button class="confirm-ok" onclick="doReset()">Ya, Reset</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -182,6 +439,10 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxQDrgYp_ERXpWlFsNG
 let ideas = [], sSc = '', sKat = '', sDampak = '', sKem = '', activeF = 'all';
 
 window.onload = function() {
+  try { loadSavedIdentity(); } catch(e) { console.error('loadSavedIdentity error:', e); }
+  try { updateCharCounter(); } catch(e) { console.error('updateCharCounter error:', e); }
+  try { updateFieldChecks(); } catch(e) { console.error('updateFieldChecks error:', e); }
+  try { updateProgress(); } catch(e) { console.error('updateProgress error:', e); }
   loadIdeas();
 };
 
@@ -190,39 +451,190 @@ function goTab(name, btn) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
   document.getElementById('pane-' + name).classList.add('on');
   btn.classList.add('on');
-  if (name === 'bank') drawCards(activeF === 'all' ? ideas : ideas.filter(i => i.kategori === activeF));
+  if (name === 'bank') applyBankFilters();
   if (name === 'stats') drawStats();
 }
 
-function pickSc(el, v) { document.querySelectorAll('.sc').forEach(b => b.classList.remove('on')); el.classList.add('on'); sSc = v; }
-function pickKat(el, v) { document.querySelectorAll('.kc').forEach(c => c.classList.remove('on')); el.classList.add('on'); sKat = v; }
+function pickSc(el, v) {
+  document.querySelectorAll('.sc').forEach(b => b.classList.remove('on'));
+  el.classList.add('on'); sSc = v;
+  const textInput = document.getElementById('f-dept');
+  const selectCorp = document.getElementById('f-dept-select');
+  const selectNy = document.getElementById('f-dept-select-ny');
+
+  // Reset all first
+  textInput.style.display = 'none';
+  selectCorp.style.display = 'none';
+  selectNy.style.display = 'none';
+  textInput.disabled = false;
+  textInput.style.background = '#fff';
+  textInput.style.color = '#1A2B5F';
+
+  if (v === 'CORP') {
+    selectCorp.style.display = 'block';
+    selectCorp.value = '';
+    textInput.value = '';
+    selectNy.value = '';
+  } else if (v === 'NY') {
+    selectNy.style.display = 'block';
+    selectNy.value = '';
+    textInput.value = '';
+    selectCorp.value = '';
+  } else if (v === 'PBL') {
+    textInput.style.display = 'block';
+    textInput.value = 'Corporate SCM & CE';
+    textInput.disabled = true;
+    textInput.style.background = '#F3F4F8';
+    textInput.style.color = '#888';
+    selectCorp.value = '';
+    selectNy.value = '';
+  } else {
+    textInput.style.display = 'block';
+    textInput.value = '';
+    selectCorp.value = '';
+    selectNy.value = '';
+  }
+  updateProgress();
+}
+function pickKat(el, v) { document.querySelectorAll('.kc').forEach(c => c.classList.remove('on')); el.classList.add('on'); sKat = v; updateProgress(); }
 
 function pickDampak(v) {
   ['d-tinggi','d-sedang','d-rendah'].forEach(id => document.getElementById(id).classList.remove('on','navy','pur','lt'));
   document.getElementById('d-' + v.toLowerCase()).classList.add('on', v==='Tinggi'?'navy':v==='Sedang'?'pur':'lt');
   sDampak = v;
+  updateProgress();
 }
 
 function pickKem(v) {
   ['k-sulit','k-sedang','k-mudah'].forEach(id => document.getElementById(id).classList.remove('on','red','amb','grn'));
   document.getElementById('k-' + v.toLowerCase()).classList.add('on', v==='Sulit'?'red':v==='Sedang'?'amb':'grn');
   sKem = v;
+  updateProgress();
 }
 
-function resetForm() {
-  document.getElementById('f-nama').value = '';
-  document.getElementById('f-id').value = '';
+function resetForm(keepIdentity) {
+  if (!keepIdentity) {
+    document.getElementById('f-nama').value = '';
+    document.getElementById('f-id').value = '';
+  }
   document.getElementById('f-dept').value = '';
+  document.getElementById('f-dept').disabled = false;
+  document.getElementById('f-dept').style.background = '#fff';
+  document.getElementById('f-dept').style.color = '#1A2B5F';
+  document.getElementById('f-dept-select').value = '';
+  document.getElementById('f-dept-select').style.display = 'none';
+  document.getElementById('f-dept-select-ny').value = '';
+  document.getElementById('f-dept-select-ny').style.display = 'none';
+  document.getElementById('f-dept').style.display = 'block';
   document.getElementById('f-ide').value = '';
   document.querySelectorAll('.sc,.kc').forEach(el => el.classList.remove('on'));
   ['d-tinggi','d-sedang','d-rendah'].forEach(id => document.getElementById(id).classList.remove('on','navy','pur','lt'));
   ['k-sulit','k-sedang','k-mudah'].forEach(id => document.getElementById(id).classList.remove('on','red','amb','grn'));
   sSc = ''; sKat = ''; sDampak = ''; sKem = '';
+  updateCharCounter();
+  updateFieldChecks();
+  updateProgress();
+}
+
+// ---------- RESET CONFIRMATION ----------
+function confirmReset() {
+  document.getElementById('confirm-overlay').classList.add('show');
+}
+function closeConfirm() {
+  document.getElementById('confirm-overlay').classList.remove('show');
+}
+function doReset() {
+  resetForm(true); // keep identity (nama & id) saat reset manual
+  closeConfirm();
+  toast('Form dikosongkan.');
+}
+
+// ---------- INGAT NAMA & ID (localStorage) ----------
+function loadSavedIdentity() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('ci_identity') || '{}');
+    if (saved.nama) document.getElementById('f-nama').value = saved.nama;
+    if (saved.id) document.getElementById('f-id').value = saved.id;
+  } catch(e) {}
+}
+function saveIdentity(nama, id) {
+  try { localStorage.setItem('ci_identity', JSON.stringify({nama, id})); } catch(e) {}
+}
+
+// ---------- CHAR COUNTER ----------
+function updateCharCounter() {
+  const val = document.getElementById('f-ide').value;
+  const counter = document.getElementById('char-counter');
+  const n = val.length;
+  counter.textContent = n + ' karakter';
+  counter.classList.toggle('ok', n >= 20);
+}
+
+// ---------- FIELD CHECKMARKS ----------
+function updateFieldChecks() {
+  const nama = document.getElementById('f-nama').value.trim();
+  const idk = document.getElementById('f-id').value.trim();
+  const ide = document.getElementById('f-ide').value.trim();
+  setCheck('chk-nama', nama.length > 0);
+  setCheck('chk-id', idk.length > 0);
+  setCheck('chk-ide', ide.length >= 20);
+}
+function setCheck(id, ok) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('show', ok);
+  el.innerHTML = ok ? '<i class="ti ti-circle-check-filled" aria-hidden="true"></i>' : '';
+}
+
+// ---------- PROGRESS INDICATOR ----------
+function getCurrentDept() {
+  if (sSc === 'CORP') return document.getElementById('f-dept-select').value.trim();
+  if (sSc === 'NY') return document.getElementById('f-dept-select-ny').value.trim();
+  return document.getElementById('f-dept').value.trim();
+}
+function updateProgress() {
+  const nama = document.getElementById('f-nama').value.trim();
+  const idk = document.getElementById('f-id').value.trim();
+  const dept = getCurrentDept();
+  const ide = document.getElementById('f-ide').value.trim();
+  let filled = 0;
+  if (nama) filled++;
+  if (idk) filled++;
+  if (sSc) filled++;
+  if (dept) filled++;
+  if (ide.length >= 20) filled++;
+  if (sKat) filled++;
+  if (sDampak) filled++;
+  if (sKem) filled++;
+  const total = 8;
+  const pct = Math.round(filled/total*100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = `Langkah ${filled} dari ${total} terisi`;
+  document.getElementById('progress-pct').textContent = pct + '%';
+}
+function onFieldInput() {
+  updateCharCounter();
+  updateFieldChecks();
+  updateProgress();
+}
+
+// ---------- SUCCESS OVERLAY ----------
+function showSuccess() {
+  document.getElementById('success-overlay').classList.add('show');
+}
+function closeSuccess() {
+  document.getElementById('success-overlay').classList.remove('show');
 }
 
 async function kirimIde() {
   const nama = document.getElementById('f-nama').value.trim();
-  const dept = document.getElementById('f-dept').value.trim();
+  const deptText = document.getElementById('f-dept');
+  const deptSelectCorp = document.getElementById('f-dept-select');
+  const deptSelectNy = document.getElementById('f-dept-select-ny');
+  let dept = '';
+  if (sSc === 'CORP') dept = deptSelectCorp.value.trim();
+  else if (sSc === 'NY') dept = deptSelectNy.value.trim();
+  else dept = deptText.value.trim();
   const ide  = document.getElementById('f-ide').value.trim();
   const idkar = document.getElementById('f-id').value.trim();
   if (!nama || !idkar || !dept || !ide || !sSc || !sKat || !sDampak || !sKem) {
@@ -238,62 +650,109 @@ async function kirimIde() {
       body: JSON.stringify({nama, id_karyawan: idkar, subco: sSc, departemen: dept, ide, kategori: sKat, dampak: sDampak, kemudahan: sKem})
     });
     ideas.unshift({nama, id_karyawan: idkar, subco: sSc, departemen: dept, ide, kategori: sKat, dampak: sDampak, kemudahan: sKem, timestamp: new Date().toLocaleString('id-ID')});
-    resetForm();
-    toast('Ide berhasil dikirim ke Google Sheets!');
+    saveIdentity(nama, idkar);
+    resetForm(true);
+    showSuccess();
   } catch(e) {
     toast('Gagal kirim: ' + e.message, true);
   }
   btn.disabled = false; btn.textContent = 'Kirim Ide →';
 }
 
-async function loadIdeas() {
-  try {
-    // Gunakan callback JSONP-style agar tidak kena CORS dari GitHub Pages
-    const r = await fetch(SCRIPT_URL + '?callback=jsonpCallback', {
-      method: 'GET',
-      mode: 'cors'
-    });
-    const data = await r.json();
-    ideas = Array.isArray(data) ? data.map(row => ({
-      nama: row['Nama'] || row.nama || '',
-      id_karyawan: row['ID Karyawan'] || row.id_karyawan || '',
-      subco: row['Sub-Co'] || row.subco || '',
-      departemen: row['Departemen'] || row.departemen || '',
-      ide: row['Ide'] || row.ide || '',
-      kategori: row['Kategori'] || row.kategori || '',
-      dampak: row['Dampak'] || row.dampak || '',
-      kemudahan: row['Kemudahan'] || row.kemudahan || '',
-      timestamp: row['Timestamp'] || row.timestamp || ''
-    })).reverse() : [];
-    drawCards(ideas);
-    drawStats();
-  } catch(e) {
-    console.warn('Gagal load dari Sheets:', e);
+function processRawData(data) {
+  ideas = Array.isArray(data) ? data.map(row => ({
+    nama: row['Nama'] || row.nama || '',
+    id_karyawan: row['ID Karyawan'] || row.id_karyawan || '',
+    subco: row['Sub-Co'] || row.subco || '',
+    departemen: row['Departemen'] || row.departemen || '',
+    ide: row['Ide'] || row.ide || '',
+    kategori: row['Kategori'] || row.kategori || '',
+    dampak: row['Dampak'] || row.dampak || '',
+    kemudahan: row['Kemudahan'] || row.kemudahan || '',
+    timestamp: row['Timestamp'] || row.timestamp || ''
+  })).reverse() : [];
+  try { applyBankFilters(); } catch(e) { console.error('applyBankFilters error:', e); }
+  try { drawStats(); } catch(e) { console.error('drawStats error:', e); }
+}
+
+function loadIdeas() {
+  // Gunakan JSONP untuk menghindari CORS block dari GitHub Pages
+  const callbackName = 'jsonpCb_' + Date.now();
+  window[callbackName] = function(data) {
+    processRawData(data);
+    delete window[callbackName];
+    script.remove();
+  };
+
+  const script = document.createElement('script');
+  script.src = SCRIPT_URL + '?callback=' + callbackName;
+  script.onerror = function() {
+    console.error('Gagal load dari Sheets: JSONP request error');
     ideas = [];
-  }
+    try { applyBankFilters(); } catch(e) {}
+    try { drawStats(); } catch(e) {}
+    delete window[callbackName];
+  };
+  document.body.appendChild(script);
 }
 
 function katCls(k) {
   return {Digitalisasi:'dig','Tools / Fasilitas Kerja':'tools','Proses Kerja':'pros','Layout / Area Kerja':'lay'}[k] || 'dig';
 }
 
-function filterBank(f, el) {
+let sortNewest = true;
+
+function filterBank(type, f, el) {
   activeF = f;
-  document.querySelectorAll('.chip').forEach(c => c.classList.add('dim'));
+  document.querySelectorAll('#kat-chips .chip').forEach(c => c.classList.add('dim'));
   el.classList.remove('dim');
-  drawCards(f === 'all' ? ideas : ideas.filter(i => i.kategori === f));
+  applyBankFilters();
+}
+
+function toggleSort() {
+  sortNewest = !sortNewest;
+  document.getElementById('sort-btn').classList.toggle('active', !sortNewest);
+  applyBankFilters();
+}
+
+function applyBankFilters() {
+  const q = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
+  const fSubco = document.getElementById('filter-subco')?.value || '';
+  const fDampak = document.getElementById('filter-dampak')?.value || '';
+  const fKem = document.getElementById('filter-kemudahan')?.value || '';
+
+  let data = ideas.filter(i => {
+    if (activeF !== 'all' && i.kategori !== activeF) return false;
+    if (fSubco && i.subco !== fSubco) return false;
+    if (fDampak && i.dampak !== fDampak) return false;
+    if (fKem && i.kemudahan !== fKem) return false;
+    if (q) {
+      const hay = `${i.nama} ${i.ide} ${i.departemen}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  if (!sortNewest) {
+    const order = {Tinggi:3, Sedang:2, Rendah:1};
+    data = [...data].sort((a,b) => (order[b.dampak]||0) - (order[a.dampak]||0));
+  }
+
+  drawCards(data);
 }
 
 function drawCards(data) {
   const list = document.getElementById('cards-list');
+  const countEl = document.getElementById('result-count');
+  if (countEl) countEl.textContent = data.length ? `Menampilkan ${data.length} dari ${ideas.length} ide` : '';
   if (!data.length) {
-    list.innerHTML = '<div class="empty"><i class="ti ti-bulb-off" aria-hidden="true"></i><p style="font-size:13px">Belum ada ide' + (activeF !== 'all' ? ' untuk kategori ini' : '') + '.</p></div>';
+    list.innerHTML = '<div class="empty"><i class="ti ti-bulb-off" aria-hidden="true"></i><p style="font-size:13px">Tidak ada ide yang cocok dengan filter ini.</p></div>';
     return;
   }
   list.innerHTML = data.map(d => `
     <div class="card ${katCls(d.kategori)}">
       <div class="card-top">
-        <div><div class="card-name">${d.nama}</div><div class="card-dept">${d.departemen}</div></div>
+        <div><div class="card-name">${d.nama}</div><div class="card-dept">${d.departemen} · ${d.subco}</div></div>
         <span class="bx sc-b">${d.subco}</span>
       </div>
       <div class="card-text">${d.ide}</div>
@@ -306,22 +765,109 @@ function drawCards(data) {
 }
 
 function drawStats() {
-  const tot = ideas.length, hi = ideas.filter(i => i.dampak==='Tinggi').length, easy = ideas.filter(i => i.kemudahan==='Mudah').length;
+  const tot = ideas.length;
+  const hi = ideas.filter(i => i.dampak==='Tinggi').length;
+  const quickWin = ideas.filter(i => (i.dampak==='Tinggi'||i.dampak==='Sedang') && i.kemudahan==='Mudah').length;
+
   document.getElementById('st-tot').textContent = tot;
   document.getElementById('st-hi').textContent = hi;
-  document.getElementById('st-easy').textContent = easy;
-  if (!tot) { document.getElementById('stats-body').innerHTML = '<i class="ti ti-chart-pie" style="font-size:30px;display:block;color:#D0D8EE;margin-bottom:8px" aria-hidden="true"></i>Belum ada data.'; return; }
+  document.getElementById('st-easy').textContent = quickWin;
+
+  if (!tot) {
+    document.getElementById('stats-empty').style.display = 'block';
+    document.getElementById('stats-content').style.display = 'none';
+    return;
+  }
+  document.getElementById('stats-empty').style.display = 'none';
+  document.getElementById('stats-content').style.display = 'block';
+
+  // ---------- QUICK WIN MATRIX ----------
+  const dampakKeys = ['tinggi','sedang','rendah'];
+  const kemKeys = ['sulit','sedang','mudah'];
+  dampakKeys.forEach(d => {
+    kemKeys.forEach(k => {
+      const n = ideas.filter(i => i.dampak.toLowerCase()===d && i.kemudahan.toLowerCase()===k).length;
+      const cell = document.getElementById(`mx-${d}-${k}`);
+      if (cell) cell.querySelector('.mcell-n').textContent = n;
+    });
+  });
+  const winCount = ideas.filter(i => (i.dampak==='Tinggi'||i.dampak==='Sedang') && i.kemudahan==='Mudah').length;
+  const winPct = tot ? Math.round(winCount/tot*100) : 0;
+  document.getElementById('quickwin-banner').innerHTML =
+    `<strong>${winCount} ide (${winPct}%)</strong> berada di kuadran Quick Win — dampak tinggi/sedang namun mudah dieksekusi. Prioritaskan ide-ide ini untuk hasil cepat.`;
+
+  // ---------- TREN PER BULAN ----------
+  const monthMap = {};
+  ideas.forEach(i => {
+    let d = i.timestamp ? new Date(i.timestamp) : null;
+    if (!d || isNaN(d)) return;
+    const key = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0');
+    monthMap[key] = (monthMap[key]||0) + 1;
+  });
+  const monthKeys = Object.keys(monthMap).sort().slice(-6);
+  const maxMonth = Math.max(1, ...monthKeys.map(k => monthMap[k]));
+  const monthNames = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des'];
+  const trendHtml = monthKeys.length ? monthKeys.map(k => {
+    const [y,m] = k.split('-');
+    const n = monthMap[k];
+    const h = Math.max(6, Math.round(n/maxMonth*70));
+    return `<div class="trend-bar-wrap"><span class="trend-n">${n}</span><div class="trend-bar" style="height:${h}px"></div><span class="trend-lbl">${monthNames[parseInt(m)-1]}</span></div>`;
+  }).join('') : '<div class="empty-small">Data tanggal tidak tersedia.</div>';
+  document.getElementById('trend-chart').innerHTML = trendHtml;
+
+  // ---------- KATEGORI BREAKDOWN ----------
+  const katColors = {'Digitalisasi':'#1A2B5F','Tools / Fasilitas Kerja':'#6B3FA0','Proses Kerja':'#F0A020','Layout / Area Kerja':'#1A8A4A'};
   const cats = ['Digitalisasi','Tools / Fasilitas Kerja','Proses Kerja','Layout / Area Kerja'];
-  const bars = cats.map(c => {
+  document.getElementById('kat-breakdown').innerHTML = cats.map(c => {
     const n = ideas.filter(i => i.kategori===c).length;
-    if (!n) return '';
-    const pct = Math.round(n/tot*100);
-    return `<div style="margin-bottom:9px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:12px;font-weight:600;color:#1A2B5F;font-family:'Poppins',sans-serif">${c}</span><span style="font-size:12px;color:#6B3FA0;font-weight:700">${n} (${pct}%)</span></div><div style="background:#EEF1FA;border-radius:20px;height:7px;overflow:hidden"><div style="background:#6B3FA0;height:100%;width:${pct}%;border-radius:20px"></div></div></div>`;
+    const pct = tot ? Math.round(n/tot*100) : 0;
+    return `<div class="kat-bar-row"><div class="kat-bar-top"><span class="kat-bar-name">${c}</span><span class="kat-bar-val">${n} (${pct}%)</span></div><div class="kat-bar-track"><div class="kat-bar-fill" style="width:${pct}%;background:${katColors[c]}"></div></div></div>`;
   }).join('');
+
+  // ---------- SUB-CO PERFORMANCE ----------
+  const subcoNames = {CORP:'Corporate', PBL:'Prakasa Bahana Lestari', NY:'PT. Nyalindung', DAS:'Daya Toyota', DAWI:'Daya Daihatsu'};
   const scMap = {};
-  ideas.forEach(i => { scMap[i.subco] = (scMap[i.subco]||0)+1; });
-  const scBadges = Object.entries(scMap).map(([s,n]) => `<span class="bx sc-b" style="font-size:11px">${s}: ${n}</span>`).join('');
-  document.getElementById('stats-body').innerHTML = `<div style="margin-bottom:1rem">${bars}</div><div style="font-size:11px;font-weight:700;color:#9AA3BB;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;font-family:'Poppins',sans-serif">Per Sub-Co</div><div style="display:flex;flex-wrap:wrap;gap:5px">${scBadges||'<span style="font-size:12px;color:#ccc">Belum ada</span>'}</div>`;
+  ideas.forEach(i => {
+    if (!scMap[i.subco]) scMap[i.subco] = {count:0, tinggi:0};
+    scMap[i.subco].count++;
+    if (i.dampak==='Tinggi') scMap[i.subco].tinggi++;
+  });
+  const scSorted = Object.entries(scMap).sort((a,b) => b[1].count - a[1].count);
+  document.getElementById('subco-breakdown').innerHTML = scSorted.length ? scSorted.map(([s,v]) => `
+    <div class="subco-card">
+      <div class="subco-card-left">
+        <div class="subco-icon">${s}</div>
+        <div><div class="subco-name">${subcoNames[s]||s}</div><div class="subco-detail">${v.tinggi} ide berdampak tinggi</div></div>
+      </div>
+      <div class="subco-count">${v.count}</div>
+    </div>`).join('') : '<div class="empty-small">Belum ada data.</div>';
+
+  // ---------- TOP 5 DEPARTEMEN ----------
+  const deptMap = {};
+  ideas.forEach(i => { if (i.departemen) deptMap[i.departemen] = (deptMap[i.departemen]||0)+1; });
+  const deptSorted = Object.entries(deptMap).sort((a,b) => b[1]-a[1]).slice(0,5);
+  document.getElementById('dept-breakdown').innerHTML = deptSorted.length ? deptSorted.map(([d,n], idx) => `
+    <div class="dept-row">
+      <div class="dept-rank ${idx===0?'r1':''}">${idx+1}</div>
+      <div class="dept-name">${d}</div>
+      <div class="dept-n">${n} ide</div>
+    </div>`).join('') : '<div class="empty-small">Belum ada data.</div>';
+
+  // ---------- LEADERBOARD ----------
+  const nameMap = {};
+  ideas.forEach(i => {
+    if (!i.nama) return;
+    if (!nameMap[i.nama]) nameMap[i.nama] = {count:0, dept:i.departemen};
+    nameMap[i.nama].count++;
+  });
+  const lbSorted = Object.entries(nameMap).sort((a,b) => b[1].count-a[1].count).slice(0,5);
+  const rankClass = ['gold','silver','bronze'];
+  document.getElementById('leaderboard').innerHTML = lbSorted.length ? lbSorted.map(([n,v], idx) => `
+    <div class="lb-row">
+      <div class="lb-rank ${rankClass[idx]||''}">${idx+1}</div>
+      <div class="lb-info"><div class="lb-name">${n}</div><div class="lb-dept">${v.dept||'-'}</div></div>
+      <div class="lb-count">${v.count}</div>
+    </div>`).join('') : '<div class="empty-small">Belum ada data.</div>';
 }
 
 function toast(msg, err) {
