@@ -186,6 +186,18 @@ textarea.fi{min-height:90px;resize:vertical}
 .confirm-btns button{flex:1;padding:9px;border-radius:8px;font-size:12.5px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer;border:1.5px solid #DDE3F0}
 .confirm-cancel{background:#fff;color:#9AA3BB}
 .confirm-ok{background:#E24B4A;color:#fff;border-color:#E24B4A}
+
+/* Loading & error states */
+.loading-state{text-align:center;padding:2.5rem 1rem;color:#9AA3BB}
+.loading-state i{font-size:28px;display:block;margin-bottom:8px;color:#C9AEED}
+.loading-state p{font-size:12.5px;line-height:1.5}
+.error-state{text-align:center;padding:2.2rem 1rem;background:#FDF2F2;border-radius:10px;margin-top:4px}
+.error-state i{font-size:26px;display:block;margin-bottom:6px;color:#E24B4A}
+.error-state p{font-size:12.5px;color:#8B1A1A;line-height:1.5;margin-bottom:10px}
+.error-state .retry-btn{padding:7px 16px;border-radius:7px;background:#1A2B5F;color:#fff;border:none;font-size:12px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer}
+.error-state .retry-btn:hover{background:#6B3FA0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{display:inline-block;animation:spin 0.9s linear infinite}
 </style>
 </head>
 <body>
@@ -359,7 +371,10 @@ textarea.fi{min-height:90px;resize:vertical}
     <div class="result-count" id="result-count"></div>
 
     <div class="cards" id="cards-list">
-      <div class="empty"><i class="ti ti-bulb-off" aria-hidden="true"></i><p style="font-size:13px">Belum ada ide tersimpan.</p></div>
+      <div class="loading-state" id="bank-loading">
+        <i class="ti ti-loader spin" aria-hidden="true"></i>
+        <p>Memuat data ide...</p>
+      </div>
     </div>
   </div>
 
@@ -370,7 +385,12 @@ textarea.fi{min-height:90px;resize:vertical}
       <div class="sbox"><div class="snum" id="st-easy">0</div><div class="slbl">Quick Win</div></div>
     </div>
 
-    <div id="stats-empty" style="text-align:center;padding:1rem;color:#888;font-size:13px">
+    <div id="stats-loading" style="text-align:center;padding:2rem 1rem;color:#9AA3BB">
+      <i class="ti ti-loader spin" style="font-size:28px;display:block;margin-bottom:8px;color:#C9AEED" aria-hidden="true"></i>
+      <p style="font-size:12.5px">Memuat statistik...</p>
+    </div>
+
+    <div id="stats-empty" style="display:none;text-align:center;padding:1rem;color:#888;font-size:13px">
       <i class="ti ti-chart-pie" style="font-size:30px;display:block;color:#D0D8EE;margin-bottom:8px" aria-hidden="true"></i>Belum ada data untuk dianalisis.
     </div>
 
@@ -436,6 +456,7 @@ textarea.fi{min-height:90px;resize:vertical}
 
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxQDrgYp_ERXpWlFsNGLvh3gRNard8OZ43Vf1SnaMvcGLUifgH_3JSCRI6G0hUxs2PVw/exec";
+const CSV_URL    = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRRj1JQJLy9fjjuKNJ-8tWHNRmCUs4VmWdaAqzIUCY76hTeXi21cKVHN5sFLpBSMckNOa9fft0DdHV0/pub?output=csv";
 let ideas = [], sSc = '', sKat = '', sDampak = '', sKem = '', activeF = 'all';
 
 window.onload = function() {
@@ -659,7 +680,40 @@ async function kirimIde() {
   btn.disabled = false; btn.textContent = 'Kirim Ide →';
 }
 
+function hideLoadingStates() {
+  const bl = document.getElementById('bank-loading');
+  const sl = document.getElementById('stats-loading');
+  if (bl) bl.style.display = 'none';
+  if (sl) sl.style.display = 'none';
+}
+
+function showLoadError() {
+  hideLoadingStates();
+  const list = document.getElementById('cards-list');
+  list.innerHTML = `<div class="error-state">
+    <i class="ti ti-wifi-off" aria-hidden="true"></i>
+    <p>Gagal memuat data dari server.<br>Pastikan koneksi internet aktif dan Apps Script sudah di-publish.</p>
+    <button class="retry-btn" onclick="retryLoad()">Coba Lagi</button>
+  </div>`;
+  const sl = document.getElementById('stats-loading');
+  if (sl) sl.style.display = 'none';
+  const se = document.getElementById('stats-empty');
+  if (se) { se.style.display = 'block'; se.innerHTML = `<i class="ti ti-wifi-off" style="font-size:28px;display:block;color:#E24B4A;margin-bottom:8px" aria-hidden="true"></i><span style="color:#8B1A1A">Gagal memuat data statistik.</span><br><button class="retry-btn" style="margin-top:8px" onclick="retryLoad()">Coba Lagi</button>`; }
+}
+
+function retryLoad() {
+  // Reset to loading state
+  const list = document.getElementById('cards-list');
+  list.innerHTML = '<div class="loading-state" id="bank-loading"><i class="ti ti-loader spin" aria-hidden="true"></i><p>Memuat data ide...</p></div>';
+  const sl = document.getElementById('stats-loading');
+  if (sl) sl.style.display = 'block';
+  const se = document.getElementById('stats-empty');
+  if (se) se.style.display = 'none';
+  loadIdeas();
+}
+
 function processRawData(data) {
+  hideLoadingStates();
   ideas = Array.isArray(data) ? data.map(row => ({
     nama: row['Nama'] || row.nama || '',
     id_karyawan: row['ID Karyawan'] || row.id_karyawan || '',
@@ -675,49 +729,41 @@ function processRawData(data) {
   try { drawStats(); } catch(e) { console.error('drawStats error:', e); }
 }
 
-function loadIdeas() {
-  // Gunakan JSONP untuk menghindari CORS block dari GitHub Pages
-  const callbackName = 'jsonpCb_' + Date.now();
-  let loaded = false;
-
-  window[callbackName] = function(data) {
-    loaded = true;
-    processRawData(data);
-    delete window[callbackName];
-    if (script.parentNode) script.remove();
-  };
-
-  const script = document.createElement('script');
-  script.src = SCRIPT_URL + '?callback=' + callbackName;
-
-  // onerror sering false-positive karena ada redirect (302) di Apps Script,
-  // jadi kita tunda penanganan error dan cek apakah callback sudah jalan
-  script.onerror = function() {
-    setTimeout(function() {
-      if (!loaded) {
-        console.error('Gagal load dari Sheets: JSONP request error (timeout)');
-        ideas = [];
-        try { applyBankFilters(); } catch(e) {}
-        try { drawStats(); } catch(e) {}
-        delete window[callbackName];
-        if (script.parentNode) script.remove();
-      }
-    }, 1500);
-  };
-
-  // Fallback: jika dalam 6 detik callback belum jalan sama sekali, anggap gagal
-  setTimeout(function() {
-    if (!loaded && window[callbackName]) {
-      console.error('Gagal load dari Sheets: JSONP timeout 6s');
-      ideas = [];
-      try { applyBankFilters(); } catch(e) {}
-      try { drawStats(); } catch(e) {}
-      delete window[callbackName];
-      if (script.parentNode) script.remove();
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return [];
+  const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g,'').trim());
+  return lines.slice(1).map(line => {
+    // Handle quoted fields with commas inside
+    const fields = [];
+    let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') { inQ = !inQ; }
+      else if (c === ',' && !inQ) { fields.push(cur); cur = ''; }
+      else { cur += c; }
     }
-  }, 6000);
+    fields.push(cur);
+    const obj = {};
+    headers.forEach((h, i) => obj[h] = (fields[i] || '').trim());
+    return obj;
+  }).filter(r => Object.values(r).some(v => v));
+}
 
-  document.body.appendChild(script);
+async function loadIdeas() {
+  try {
+    const res = await fetch(CSV_URL);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    // Cek apakah response adalah HTML (halaman login) bukan CSV
+    if (text.trim().startsWith('<')) throw new Error('Sheet belum di-publish publik');
+    processRawData(parseCSV(text));
+  } catch(err) {
+    console.error('Gagal load CSV:', err.message);
+    ideas = [];
+    showLoadError();
+    try { drawStats(); } catch(e) {}
+  }
 }
 
 function katCls(k) {
@@ -789,6 +835,8 @@ function drawCards(data) {
 }
 
 function drawStats() {
+  const sl = document.getElementById('stats-loading');
+  if (sl) sl.style.display = 'none';
   const tot = ideas.length;
   const hi = ideas.filter(i => i.dampak==='Tinggi').length;
   const quickWin = ideas.filter(i => (i.dampak==='Tinggi'||i.dampak==='Sedang') && i.kemudahan==='Mudah').length;
