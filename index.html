@@ -725,75 +725,23 @@ function processRawData(data) {
     kemudahan: row['Kemudahan'] || row.kemudahan || '',
     timestamp: row['Timestamp'] || row.timestamp || ''
   })).reverse() : [];
-  try { applyBankFilters(); } catch(e) { console.error('applyBankFilters error:', e); }
-  try { drawStats(); } catch(e) { console.error('drawStats error:', e); }
+  applyBankFilters();
+  drawStats();
 }
 
-function parseCSV(text) {
-  const lines = text.trim().split('\n');
-  if (lines.length < 2) return [];
-  const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g,'').trim());
-  return lines.slice(1).map(line => {
-    // Handle quoted fields with commas inside
-    const fields = [];
-    let cur = '', inQ = false;
-    for (let i = 0; i < line.length; i++) {
-      const c = line[i];
-      if (c === '"') { inQ = !inQ; }
-      else if (c === ',' && !inQ) { fields.push(cur); cur = ''; }
-      else { cur += c; }
-    }
-    fields.push(cur);
-    const obj = {};
-    headers.forEach((h, i) => obj[h] = (fields[i] || '').trim());
-    return obj;
-  }).filter(r => Object.values(r).some(v => v));
-}
-
-function loadIdeas() {
-  jsonpLoad();
-}
-
-function jsonpLoad() {
-  const ts = Date.now();
-  const cbName = 'cb_' + ts;
-  let done = false;
-
-  window[cbName] = function(data) {
-    done = true;
-    cleanup();
+async function loadIdeas() {
+  try {
+    const res = await fetch(SCRIPT_URL, { method: 'GET' });
+    const text = await res.text();
+    const data = JSON.parse(text);
     processRawData(data);
-  };
-
-  const s = document.createElement('script');
-  s.id = 'jsonp_script_' + ts;
-  s.src = SCRIPT_URL + '?callback=' + cbName + '&t=' + ts;
-
-  s.onerror = function() {
-    setTimeout(function() {
-      if (!done) { done = true; cleanup(); fallbackEmpty(); }
-    }, 2000);
-  };
-
-  const timer = setTimeout(function() {
-    if (!done) { done = true; cleanup(); fallbackEmpty(); }
-  }, 10000);
-
-  function cleanup() {
-    clearTimeout(timer);
-    delete window[cbName];
-    const el = document.getElementById('jsonp_script_' + ts);
-    if (el) el.remove();
-  }
-
-  function fallbackEmpty() {
-    console.error('JSONP gagal — deploy ulang Apps Script dengan versi baru');
+  } catch(err) {
+    console.error('Gagal memuat data dari Google Sheets:', err);
     ideas = [];
+    hideLoadingStates();
     showLoadError();
     try { drawStats(); } catch(e) {}
   }
-
-  document.body.appendChild(s);
 }
 
 function katCls(k) {
