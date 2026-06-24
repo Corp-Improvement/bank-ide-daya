@@ -141,7 +141,9 @@ textarea.fi{min-height:90px;resize:vertical}
 .dept-row:last-child{border-bottom:none}
 .dept-rank{width:20px;height:20px;border-radius:50%;background:#EEF1FA;color:#1A2B5F;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Poppins',sans-serif}
 .dept-rank.r1{background:#F0A020;color:#fff}
-.dept-name{flex:1;font-size:12px;color:#1A2B5F;font-weight:600}
+.dept-name{font-size:12px;color:#1A2B5F;font-weight:600}
+.dept-info{flex:1}
+.dept-subco{font-size:10px;color:#9AA3BB;margin-top:1px}
 .dept-n{font-size:12px;color:#6B3FA0;font-weight:700}
 .lb-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #F0F2F8}
 .lb-row:last-child{border-bottom:none}
@@ -830,12 +832,22 @@ function exportExcel() {
 
   // Sheet 3: Ringkasan per departemen
   const deptCounts = {};
+  const deptSubcoX = {};
   analisaFilteredRows.forEach(r => {
     const d = analisaFields.dept ? (r[analisaFields.dept] || '').trim() : '';
     if (!d) return;
     deptCounts[d] = (deptCounts[d] || 0) + 1;
+    const s = analisaFields.subco ? (r[analisaFields.subco] || '').trim() : '';
+    if (s) {
+      if (!deptSubcoX[d]) deptSubcoX[d] = new Set();
+      deptSubcoX[d].add(s);
+    }
   });
-  const deptRows = Object.entries(deptCounts).sort((a, b) => b[1] - a[1]).map(([d, v]) => ({ Departemen: d, 'Jumlah Ide': v }));
+  const deptRows = Object.entries(deptCounts).sort((a, b) => b[1] - a[1]).map(([d, v]) => ({
+    Departemen: d,
+    'Sub-Co': deptSubcoX[d] ? Array.from(deptSubcoX[d]).sort().join(', ') : '',
+    'Jumlah Ide': v
+  }));
   XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(deptRows), 'Per Departemen');
 
   // Sheet 4: Leaderboard kontributor
@@ -1042,18 +1054,27 @@ function renderAnalisa(rows) {
 
   // ---- DEPT RANKING (top 5)
   const deptCounts = {};
+  const deptSubco = {};
   rows.forEach(r => {
     const d = f.dept ? (r[f.dept] || '').trim() : '';
     if (!d) return;
     deptCounts[d] = (deptCounts[d] || 0) + 1;
+    const s = f.subco ? (r[f.subco] || '').trim() : '';
+    if (s) {
+      if (!deptSubco[d]) deptSubco[d] = new Set();
+      deptSubco[d].add(s);
+    }
   });
   const deptEl = document.getElementById('dept-ranking');
   const deptSorted = Object.entries(deptCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
   if (deptSorted.length) {
-    deptEl.innerHTML = deptSorted.map(([d, v], i) =>
-      '<div class="dept-row"><div class="dept-rank' + (i === 0 ? ' r1' : '') + '">' + (i + 1) + '</div>' +
-      '<div class="dept-name">' + d + '</div><div class="dept-n">' + v + ' ide</div></div>'
-    ).join('');
+    deptEl.innerHTML = deptSorted.map(([d, v], i) => {
+      const subcoList = deptSubco[d] ? Array.from(deptSubco[d]).sort().join(', ') : '';
+      return '<div class="dept-row"><div class="dept-rank' + (i === 0 ? ' r1' : '') + '">' + (i + 1) + '</div>' +
+        '<div class="dept-info"><div class="dept-name">' + d + '</div>' +
+        (subcoList ? '<div class="dept-subco">' + subcoList + '</div>' : '') + '</div>' +
+        '<div class="dept-n">' + v + ' ide</div></div>';
+    }).join('');
   } else {
     deptEl.innerHTML = '<div class="empty-small">Belum ada data departemen.</div>';
   }
